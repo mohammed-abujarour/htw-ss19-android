@@ -1,1 +1,1 @@
-# htw-ss19-android
+# Android samples
