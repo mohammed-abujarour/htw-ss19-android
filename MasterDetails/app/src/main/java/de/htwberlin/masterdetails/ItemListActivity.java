@@ -83,7 +83,7 @@ public class ItemListActivity extends AppCompatActivity {
                 Mensa item = (Mensa) view.getTag();
                 if (mTwoPane) {
                     Bundle arguments = new Bundle();
-                    arguments.putInt(ItemDetailFragment.ARG_ITEM_ID, item.getId());
+                    arguments.putSerializable(ItemDetailFragment.ARG_ITEM, item);
                     ItemDetailFragment fragment = new ItemDetailFragment();
                     fragment.setArguments(arguments);
                     mParentActivity.getSupportFragmentManager().beginTransaction()
@@ -92,7 +92,7 @@ public class ItemListActivity extends AppCompatActivity {
                 } else {
                     Context context = view.getContext();
                     Intent intent = new Intent(context, ItemDetailActivity.class);
-                    intent.putExtra(ItemDetailFragment.ARG_ITEM_ID, item.getId());
+                    intent.putExtra(ItemDetailFragment.ARG_ITEM, item);
                     context.startActivity(intent);
                 }
             }
